@@ -5,6 +5,7 @@ const routesGetRecipes = require('./get/routesGetRecipes');
 const routesGetDiets = require('./get/routesGetDiets');
 const routersPostRecipe = require('./post/routesPostRecipe');
 const routesPutRecipe = require("./put/routesPutRecipe");
+const routesDeleteRecipe = require("./delete/routesDeleteRecipe");
 
 
 const router = Router();
@@ -20,6 +21,8 @@ router.use('/diets', routesGetDiets);
 router.use('/recipe', routersPostRecipe);
 
 router.use('/recipe', routesPutRecipe);
+
+router.use('/recipe', routesDeleteRecipe);
 
 
 
