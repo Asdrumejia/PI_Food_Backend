@@ -4,7 +4,7 @@ const { Router } = require('express');
 const routesGetRecipes = require('./get/routesGetRecipes');
 const routesGetDiets = require('./get/routesGetDiets');
 const routersPostRecipe = require('./post/routesPostRecipe');
-
+const routesPutRecipe = require("./put/routesPutRecipe");
 
 
 const router = Router();
@@ -18,6 +18,10 @@ router.use('/recipes', routesGetRecipes);
 router.use('/diets', routesGetDiets);
 
 router.use('/recipe', routersPostRecipe);
+
+router.use('/recipe', routesPutRecipe);
+
+
 
 
 
