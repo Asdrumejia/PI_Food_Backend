@@ -34,9 +34,7 @@ const getDbInfo = async () => {
        include: {
           model: Diet, 
           attributes: ['name'],
-           through: {
-              attributes: [],  
-          }
+           through: {attributes: []}
        }
   })
 
@@ -85,11 +83,9 @@ if(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(id)){
           {
             model: Diet,
             attributes: ["name"],
-            through: {
-              attributes: [],
-            },
-          },
-        ],
+            through: {attributes: []}
+          }
+        ]
       })
     return  responseDb;
  } 
@@ -100,7 +96,7 @@ const getAllRecipes = async () => {
     const apiInfo = await getRecipesApi();
     const dbInfo = await getDbInfo();
     const totalInfo = await apiInfo.concat(dbInfo);
-    return totalInfo
+    return totalInfo;
 };
 
 

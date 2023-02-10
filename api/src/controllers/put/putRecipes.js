@@ -11,7 +11,7 @@ const putRecipe = async (id, name, summary, dishTypes, healthScore, diets, image
       healthScore: healthScore,
       diets: diets, 
       image: image,
-      steps: steps,
+      steps: steps
    }) 
   return RecipeDb;
   

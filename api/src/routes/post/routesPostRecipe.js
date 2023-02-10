@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.post('/', async (req, res) => {
-    const { name, summary, dishTypes, healthScore, diets, image, steps } = req.body; 
+    const {name, summary, dishTypes, healthScore, diets, image, steps} = req.body; 
     try {
         if(!name || !summary || !dishTypes || !healthScore || !diets || !image || !steps){
             return res.status(404).send('Missing data to create Recipe');

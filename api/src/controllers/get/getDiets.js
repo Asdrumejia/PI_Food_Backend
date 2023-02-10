@@ -8,10 +8,8 @@ const getDiets = async () => {
                     
         dietsTypes?.forEach((diet) => {
             Diet.findOrCreate({
-                where: {
-                    name: diet
-                }
-            });
+                where: { name: diet }
+            })
         });
         
         const dbDiets = await Diet.findAll();
