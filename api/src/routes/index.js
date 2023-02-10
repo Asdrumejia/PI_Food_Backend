@@ -1,11 +1,11 @@
 const { Router } = require('express');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const routesGetRecipes = require("./get/routesGetRecipes");
-const routesGetDiets = require("./get/routesGetDiets");
-const routersPostRecipe = require("./post/routesPostRecipe");
-const routesPutRecipe = require("./put/routesPutRecipe");
-const routesDeleteRecipe = require("./delete/routesDeleteRecipe");
+const getRecipes = require('./get/routesGetRecipes');
+const getDiets = require('./get/routesGetDiets');
+const postRecipe = require('./post/routesPostRecipe');
+const putRecipe = require('./put/routesPutRecipe');
+const deleteRecipe = require('./delete/routesDeleteRecipe');
 
 
 const router = Router();
@@ -14,15 +14,15 @@ const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-router.use('/recipes', routesGetRecipes);
+router.use('/recipes', getRecipes);
 
-router.use('/diets', routesGetDiets);
+router.use('/diets', getDiets);
 
-router.use('/recipe', routersPostRecipe);
+router.use('/recipe', postRecipe);
 
-router.use('/recipe', routesPutRecipe);
+router.use('/recipe', putRecipe);
 
-router.use('/recipe', routesDeleteRecipe);
+router.use('/recipe', deleteRecipe);
 
 
 

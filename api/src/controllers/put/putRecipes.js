@@ -1,19 +1,19 @@
-const { Recipe } = require("../../db");
+const { Recipe } = require('../../db');
 
 
-const putRecipe = async (id, image, name, summary, dishTypes, healthScore, diets, steps) => {
+const putRecipe = async (id, name, summary, dishTypes, healthScore, diets, image, steps) => {
    const RecipeDb = await Recipe.findByPk(id)
 
-   RecipeDb.update({
-      image: image,
+   RecipeDb?.update({
       name: name,
       summary: summary, 
       dishTypes: dishTypes, 
       healthScore: healthScore,
       diets: diets, 
+      image: image,
       steps: steps,
    }) 
-  return RecipeDb
+  return RecipeDb;
   
 };
 

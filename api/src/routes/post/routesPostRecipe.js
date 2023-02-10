@@ -6,12 +6,15 @@ const router = Router();
 
 
 router.post('/', async (req, res) => {
-    const {image, name, summary, dishTypes, healthScore, diets, steps} = req.body; 
+    const { name, summary, dishTypes, healthScore, diets, image, steps } = req.body; 
     try {
-        const newRecipe = await postRecipe(image, name, summary, dishTypes, healthScore, diets, steps)
+        if(!name || !summary || !dishTypes || !healthScore || !diets || !image || !steps){
+            return res.status(404).send('Missing data to create Recipe');
+        }
+        const newRecipe = await postRecipe(name, summary, dishTypes, healthScore, diets, image, steps);
         res.status(200).send(newRecipe);
     } catch (error) {
-        res.status(400).send(error.message);
+        res.status(404).send(error.message);
     }
 });
 

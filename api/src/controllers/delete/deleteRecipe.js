@@ -1,10 +1,10 @@
-const { Recipe } = require("../../db");
+const { Recipe } = require('../../db');
 
 
 const deleteRecipe = async function (id){
-   const deleteDb = await Recipe.findByPk(id)
+   const deleteDb = await Recipe.findByPk(id);
 
-   const destroyRecipe = deleteDb?.destroy() 
+   const destroyRecipe = deleteDb?.destroy();
 
    return destroyRecipe;
 };

@@ -1,9 +1,9 @@
-const { Diet } = require("../../db");
+const { Diet } = require('../../db');
 
 
-const getAllDiets = async () => {
+const getDiets = async () => {
     const dietsTypes = ['gluten free', 'ketogenic', 'vegetarian', 'ovo vegetarian', 'lacto ovo vegetarian',
-                    'vegan', 'pescatarian', 'paleolithic', 'primal', 'fodmap friendly', 'whole 30', 'dairy free']
+                       'vegan', 'pescatarian', 'paleolithic', 'primal', 'fodmap friendly', 'whole 30', 'dairy free']
     
                     
         dietsTypes?.forEach((diet) => {
@@ -15,11 +15,11 @@ const getAllDiets = async () => {
         });
         
         const dbDiets = await Diet.findAll();
-        return dbDiets
+        return dbDiets;
 };
 
 
 module.exports = {
-    getAllDiets
+    getDiets
 }
 
