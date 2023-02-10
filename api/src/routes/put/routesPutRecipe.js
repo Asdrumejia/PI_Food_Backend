@@ -7,7 +7,7 @@ const router = Router();
 
 router.put('/:id', async (req, res) => {
     try {
-       const {id} = req.params
+       const {id} = req.params;
        const {name, summary, dishTypes, healthScore, diets, image, steps} = req.body; 
        if(!name || !summary || !dishTypes || !healthScore || !diets || !image || !steps){
           res.status(404).send('Missing data to modify this recipe');

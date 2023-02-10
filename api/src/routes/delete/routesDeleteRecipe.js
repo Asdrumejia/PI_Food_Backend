@@ -7,7 +7,7 @@ const router = Router();
 
 router.delete('/:id', async (req, res) => {
     try {
-       const {id} = req.params
+       const {id} = req.params;
        const deleted = await deleteRecipe(id);
      res.status(200).send('Recipe successfully deleted');
     } catch (error) {
